@@ -28,5 +28,5 @@ function getData() {
 
 function lakePinTapped(lake) {
 	let lakeString = JSON.stringify(lake);
-	console.log("Lake Pin Tapped : " +lakeString)
+	console.log("Lake Pin Clicked : " +lakeString)
 }
