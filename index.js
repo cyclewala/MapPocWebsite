@@ -29,6 +29,7 @@ function getData() {
 function lakePinTapped(lake) {
 	let lakeString = JSON.stringify(lake);
 	console.log("Lake Pin Clicked : " +lakeString)
+	dropPin()
 }
 
 const dropPinObj = {"coordinate":"45.5539645,-78.6305783","lakeName":"Algonquin Park,","pinColor":"#5617c2","description":"water is safe"}
@@ -39,16 +40,16 @@ try {
     if (typeof Android != 'undefined') {
 		console.log("## Android Drop Pin Called ##");
 		let inputString = JSON.stringify(dropPinObj);
-		Android.getDropPinData(inputString);
+		Android.dropPin(inputString);
     }
     if (
       window.webkit &&
       window.webkit.messageHandlers &&
-      window.webkit.messageHandlers.getDropPinData
+      window.webkit.messageHandlers.dropPin
     ) {
 	console.log("## iOS Drop Ping Called ##");
 	let inputString = JSON.stringify(dropPinObj);
-      window.webkit.messageHandlers.getDropPinData.postMessage(inputString);
+      window.webkit.messageHandlers.dropPin.postMessage(inputString);
     }
   } catch (error) {
 	console.log(error);
