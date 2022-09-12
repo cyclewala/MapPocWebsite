@@ -40,6 +40,7 @@ try {
     if (typeof Android != 'undefined') {
 		console.log("## Android Drop Pin Called ##");
 		let inputString = JSON.stringify(dropPinObj);
+		console.log("Pin Dropped : " +lakeString)
 		Android.dropPin(inputString);
     }
     if (
@@ -47,9 +48,10 @@ try {
       window.webkit.messageHandlers &&
       window.webkit.messageHandlers.dropPin
     ) {
-	console.log("## iOS Drop Ping Called ##");
-	let inputString = JSON.stringify(dropPinObj);
-      window.webkit.messageHandlers.dropPin.postMessage(inputString);
+	    console.log("## iOS Drop Ping Called ##");
+	    let inputString = JSON.stringify(dropPinObj);
+	    console.log("Pin Dropped : " +lakeString)
+        window.webkit.messageHandlers.dropPin.postMessage(inputString);
     }
   } catch (error) {
 	console.log(error);
