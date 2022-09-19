@@ -32,7 +32,7 @@ function lakePinTapped(lake) {
 	dropPin()
 }
 
-const dropPinObj = {"coordinate":"43.6282617,-80.4783444","lakeName":"Bla Bla","pinColor":"#5617c2","description":"water is safe"}
+const dropPinObj = {"coordinate":"43.4301153,-80.7469192","lakeName":"Kitchener","pinColor":"#5617c2","description":"water is safe"}
 
 function dropPin() {
 try {
